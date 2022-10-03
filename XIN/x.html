@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - Heart lines (Chrome 69+)</title>
+  
+  
+  
+  
+<style>
+:root {
+  --bg: #000000;
+}
+
+html, body { 
+  height: 100%; 
+  margin: 0; 
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <css-doodle id="doodle">
+  :doodle {
+    @grid: 8x1 / 50vmin;
+  }
+
+  @size: calc(100% - @i() * 3%);
+  @place-cell: center;
+  @shape: heart;
+  overflow: hidden;
+  
+  :after {
+    content: '';
+    @size: calc(100% - 5px);
+    @shape: heart;
+    background: var(--bg);
+    z-index: 1;
+  }
+
+  :before {
+    content: '';
+    position: absolute;
+    @size: 200%;
+    background: conic-gradient(
+      @pd(#78E7D4, #E3383F, #EFF4DD, #F2A341) @p(10%, 40%),
+      transparent 0
+    );
+    animation: cycle @r(3s, 5s, .1) linear infinite;
+    animation-delay: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aa87ead8">[email&#160;protected]</a>(8s);
+    z-index: 0;
+  }
+
+  @keyframes cycle {
+    to { transform: rotate(1turn); }
+  }
+</css-doodle>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.4.9/css-doodle.min.js'></script>
+      <script id="rendered-js" >
+document.body.addEventListener('click', function () {
+  doodle.update();
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 

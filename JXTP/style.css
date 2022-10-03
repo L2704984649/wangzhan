@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+     font-size: 62.5%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+img{
+    background-color: #666;
+    border: 2px solid #00FFFF30;
+    border-radius: 8px;
+    height: 60rem;
+    width: 10rem;
+    margin: 1rem;
+    border-radius: 20rem;
+
+    --expand-width:60rem;
+    --shrink-width:10rem;
+    --expand-radins:3.6s;
+    --shrink-radins:20rem;
+    object-fit: cover;
+}
+
+a:nth-child(1) img{
+    animation: swiper 30s infinite;
+}
+a:nth-child(2) img{
+    animation: swiper 30s  6s infinite;
+}
+a:nth-child(3) img{
+    animation: swiper 30s  12s infinite;
+}
+a:nth-child(4) img{
+    animation: swiper 30s  18s infinite;
+}
+a:nth-child(5) img{
+    animation: swiper 30s  24s infinite;
+}
+
+@keyframes swiper{
+    0% {
+        width: var(--shrink-width);
+        border-radius: var(--shrink-radins);
+    }
+    1% {
+        width: var(--expand-width);
+        border-radius: var(--expand-radins);
+    }
+    20% {
+        width: var(--expand-width);
+        border-radius: var(--expand-radins);
+    }
+    21% {
+        width: var(--shrink-width);
+        border-radius: var(--shrink-radins);
+    }
+    100% {
+        width: var(--shrink-width);
+        border-radius: var(--shrink-radins);
+    }
+}

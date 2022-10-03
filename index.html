@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="./ZITI/XZ.otf" as="font" crossorigin="anonymous">
+    <title>清天的个人主页</title>
+    <style class="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        video{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        header{
+            position: relative;/*定位使其显示*/
+            height: 100%;/*高*/
+            width: 100%;/*宽*/
+            display: flex;
+            justify-content: center;/*水平居中*/
+            align-items: center;/*垂直居中*/
+            color: #fff;/*颜色为白色*/
+            font-size: 100px;/*字体大小*/
+            letter-spacing: 20px;
+        }
+        article{/*文章详情模块定义*/
+            background: #FFEBCD50;
+            color: #fff;/*字体颜色*/
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .XBT p{
+              position: relative;
+              margin: 50px auto 0px;
+              width: 600px;
+              font-size: 60px;
+              color:#00008070;
+            }
+        
+        .KJ{/*外框架*/
+            position: relative;
+            width: 100%;/*宽*/
+            height: 800px;/*高*/
+            background-color: #FFEBCD20;/*模块背景色，50为透明度50%*/
+            margin: 0;/*使外边距为零*/
+            border: 2px solid #FFEBCD70;
+            border-radius: 8px;
+        }
+        
+        .KJQY{
+            position: absolute;
+            background-color: #FFEBCD30;
+            width: 900PX;
+            height: 500px;
+            top: 150px;
+            left: 450px;
+            border: 2px solid #FFEBCD80;
+            border-radius: 8px;
+        }
+        .CLJ{
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background-color: transparent;
+            top: 50%;
+            border-radius: 8px;
+        }
+        .button12{
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background-color: transparent;
+            top: 50%;
+            border-radius: 8px;
+        }
+        .button123{
+            position: absolute;
+            width: 300px;
+            height: 100px;
+            background-color: transparent;
+            bottom:10%;
+            border-radius: 8px;
+            left: 40%;
+            bottom:5%;
+        }
+        .JN{
+            font-family: "XZ";
+            font-size: 100px;
+            margin-top: 60px;
+            color: #FFE4C4;
+        }
+        .XIN{
+            width: 510px;
+            height: 500px;
+            position: absolute;
+            background-color: #FFEBCD30;
+            border: 2px solid #FFEBCD80;
+            border-radius: 8px;
+            right: 25px;
+            top: 150PX;
+        }
+        .WA{
+            font: 900 13px/1 'Source Sans Pro', Arial, sans-serif; 
+            background: transparent; 
+            text-transform: uppercase; 
+            color: #F0FFF090; 
+            text-align: center; 
+            letter-spacing: -3px; 
+            padding-top: 10%; 
+        }
+        .TX{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            left: 90px;
+            top: 150PX;
+            border-radius: 8px;
+        }
+        .T{
+            position: relative;
+            width: 70%;
+            height: 100%;
+            background-color: #00FFFF50;/*设置背景色*/
+            border: 2px solid #00FFFF30;/*设置边框的厚度和颜色*/
+            border-radius: 8px;
+            animation-name: example;
+            animation-duration: 2s;
+        }
+        .T img{
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+        .M1{
+            position: absolute;
+            font-size: 50PX;
+            left: 230px;
+            top: 90px;
+            color: Azure;
+            font-family: "XZ";
+            color: #7FFFD4;
+        }
+        .M2{
+            position: absolute;
+            font-size: 50PX;
+            left: 230px;
+            top: 170px;
+            color: Azure;
+            font-family: "XZ";
+            color: #7FFFD4;
+        }
+        ::-webkit-scrollbar{/*定义滚动栏*/
+            position: relative;
+            width: 3px;
+            height: 4px;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb{/*定义滑动块*/
+            position: relative;
+            background: linear-gradient(#00E3E3 0%,#FC00FF 100%);
+            border-radius: 8px;
+        }
+        
+        @font-face{/*定义字体*/
+            font-family:XZ;
+            src:url("./ZITI/XZ.otf");
+            font-display:block;
+        }
+        @keyframes example {
+                0%  { right:400px;bottom:200px;}
+                25%  { right:0px;bottom:200px;}
+                50%  { right:0px;bottom:0px;}
+        }
+        
+        #skill { 
+        	list-style: none;
+        	font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+        	width: 600px;/*宽*/
+        	margin: 0px 30% 0;
+        	position: absolute;
+        	line-height: 2em;
+        	padding: 30px 0;/*内边距*/
+        	left: 90px;
+        	top: 160px;
+        }
+        
+        #skill li { 
+        	margin-bottom:50px; 
+        	background:#e9e5e2;
+        	background-image: -webkit-gradient(linear, left top, left bottom, from(#e1ddd9), to(#e9e5e2));
+        	background-image: -webkit-linear-gradient(top, #e1ddd9, #e9e5e2);
+        	background-image: -moz-linear-gradient(top, #e1ddd9, #e9e5e2);
+        	background-image: -ms-linear-gradient(top, #e1ddd9, #e9e5e2);
+        	background-image: -o-linear-gradient(top, #e1ddd9, #e9e5e2);
+        	background-image: linear-gradient(top, #e1ddd9, #e9e5e2);  
+        	height:20px; 
+        	border-radius:10px; 
+        	-moz-box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;	 
+        	-webkit-box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;	 
+        	box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;	  
+        }
+        
+        #skill li h3 { 
+        	position:relative; 
+        	top:-25px;
+        }
+        
+        .bar { 
+        	height:18px; 
+        	margin:1px 2px;  
+        	position:absolute;
+        	border-radius:10px;
+        	-moz-box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;
+        	-webkit-box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;	 
+        	box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;		
+        }
+        
+        .graphic-design {
+        	width:70%; 
+        	-moz-animation:graphic-design 2s ease-out;
+        	-webkit-animation:graphic-design 2s ease-out;
+        	background-color: #f674a4;
+        	background-image: -webkit-gradient(linear, left top, left bottom, from(#f674a4), to(#8600FF));
+        	background-image: -webkit-linear-gradient(top, #f674a4,#8600FF);
+        	background-image: -moz-linear-gradient(top, #f674a4, #8600FF);
+        	background-image: -ms-linear-gradient(top, #f674a4,#8600FF);
+        	background-image: -o-linear-gradient(top, #f674a4, #8600FF);
+        	background-image: linear-gradient(top, #f674a4, #8600FF);
+        }
+        
+        .html-css {
+        	width:40%;
+        	-moz-animation:html-css 2s ease-out;
+        	-webkit-animation:html-css 2s ease-out;
+        	background-color: #00FFFF;
+        	background-image: -webkit-gradient(linear, left top, left bottom, from(#00FFFF), to(#d9aa44));
+        	background-image: -webkit-linear-gradient(top, #00FFFF, #d9aa44);
+        	background-image: -moz-linear-gradient(top, #00FFFF, #d9aa44);
+        	background-image: -ms-linear-gradient(top, #00FFFF, #d9aa44);
+        	background-image: -o-linear-gradient(top, #00FFFF, #d9aa44);
+        	background-image: linear-gradient(top, #00FFFF, #d9aa44);
+        }
+        
+        .jquery {
+        	width:80%;
+        	-moz-animation:jquery 2s ease-out;
+        	-webkit-animation:jquery 2s ease-out;
+        	background-color: #FF8F59;
+        	background-image: -webkit-gradient(linear, left top, left bottom, from(#FF8F59), to(#91ba52));
+        	background-image: -webkit-linear-gradient(top, #FF8F59, #91ba52);
+        	background-image: -moz-linear-gradient(top, #FF8F59, #91ba52);
+        	background-image: -ms-linear-gradient(top, #FF8F59, #91ba52);
+        	background-image: -o-linear-gradient(top, #FF8F59, #91ba52);
+        	background-image: linear-gradient(top, #FF8F59, #91ba52);
+        }
+        
+        @-moz-keyframes graphic-design {0%  { width:0px;} 100%{ width:70%;}  }
+        @-moz-keyframes html-css        { 0%  { width:0px;} 100%{ width:40%;}  }
+        @-moz-keyframes jquery      { 0%  { width:0px;} 100%{ width:80%;}  }
+        
+        @-webkit-keyframes graphic-design       { 0%  { width:0px;} 100%{ width:70%;}  }
+        @-webkit-keyframes html-css        { 0%  { width:0px;} 100%{ width:40%;}  }
+        @-webkit-keyframes jquery      { 0%  { width:0px;} 100%{ width:80%;}  }
+            .button {
+                  display: inline-block;
+                  border-radius: 4px;
+                  background-color: transparent;
+                  border: none;
+                  color: #FF4500;
+                  text-align: center;
+                  font-size: 25px;
+                  padding: 20px;
+                  width: 48%;
+                  height: 100px;
+                  transition: all 0.5s;
+                  cursor: pointer;
+                  margin: 5px;
+                  
+                }
+                .button1 {
+                  display: inline-block;
+                  border-radius: 4px;
+                  background-color: transparent;
+                  border: none;
+                  color:#4F9D9D;
+                  text-align: center;
+                  font-size: 25px;
+                  padding: 20px;
+                  width: 31%;
+                  height: 110px;
+                  transition: all 0.5s;
+                  cursor: pointer;
+                  margin: 5px;
+                }
+                .button3 {
+                  display: inline-block;
+                  border-radius: 4px;
+                  background-color: transparent;
+                  border: none;
+                  color:#0000C6;
+                  text-align: center;
+                  font-size: 25px;
+                  padding: 20px;
+                  width: 300px;
+                  height: 100px;
+                  transition: all 0.5s;
+                  cursor: pointer;
+                  margin: 5px;
+                  
+                  left: 500px;
+                }
+                .button span {
+                  cursor: pointer;
+                  display: inline-block;
+                  position: relative;
+                  transition: 0.5s;
+                }
+                .button1 span {
+                  cursor: pointer;
+                  display: inline-block;
+                  position: relative;
+                  transition: 0.5s;
+                }
+                .button3 span {
+                  cursor: pointer;
+                  display: inline-block;
+                  position: relative;
+                  transition: 0.5s;
+                }
+                .button span:after {
+                  content: '\00bb';
+                  position: absolute;
+                  opacity: 0;
+                  top: 0;
+                  right: -20px;
+                  transition: 0.5s;
+                }
+                .button1 span:after {
+                  content: '\00bb';
+                  position: absolute;
+                  opacity: 0;
+                  top: 0;
+                  right: -20px;
+                  transition: 0.5s;
+                }
+                .button3 span:after {
+                  content: '\00bb';
+                  position: absolute;
+                  opacity: 0;
+                  top: 0;
+                  right: -20px;
+                  transition: 0.5s;
+                }
+                .button:hover span {
+                  padding-right: 25px;
+                }
+                .button1:hover span {
+                  padding-right: 25px;
+                }
+                .button3:hover span {
+                  padding-right: 25px;
+                }
+                .button:hover span:after {
+                  opacity: 1;
+                  right: 0;
+                }
+                .button1:hover span:after {
+                  opacity: 1;
+                  right: 0;
+                }
+                .button3:hover span:after {
+                  opacity: 1;
+                  right: 0;
+                }
+                h1 {
+                  position: absolute;
+                  top: 10%;
+                  width: 100%;
+                
+                  text-shadow:     0 1px 0 hsl(50,5%,80%),
+                	                 0 2px 0 hsl(50,5%,75%),
+                	                 0 3px 0 hsl(50,5%,70%),
+                	                 0 4px 0 hsl(50,5%,66%),
+                	                 0 5px 0 hsl(50,5%,64%),
+                	                 0 6px 0 hsl(50,5%,62%),
+                	                 0 7px 0 hsl(50,5%,61%),
+                	                 0 8px 0 hsl(50,5%,60%),
+                	
+                	                 0 0 5px rgba(0,0,0,.05),
+                	                0 1px 3px rgba(0,0,0,.2),
+                	                0 3px 5px rgba(0,0,0,.2),
+                	               0 5px 10px rgba(0,0,0,.2),
+                	              0 10px 10px rgba(0,0,0,.2),
+                	              0 20px 20px rgba(0,0,0,.3);
+                }
+            </style>
+        </head>
+        <body>
+    <video autoplay muted loop src="./BJ/SP.mp4"></video>
+    <header>HELLO,VISITOR</header>
+    <main>
+            <div class="KJ">
+                <div class="XBT"><p>Hello, visitor</p></div><!--小标题-->
+                    <div class="TX">
+                        <div class="T"><!--头像-->
+                            <img src="./达达鸭.jpg">
+                        </div>
+                        <div class="M"><!--名字-->
+                            <div class="M1">清</div>
+                            <div class="M2">天</div>
+                        </div>
+                    </div>
+                <div class="KJQY"><!--控件区域-->
+                    <div class="JN"><!--技能树-->
+                        技能
+                    </div>
+                    <div class="CLJ"><!--超链接区-->
+                            <a href="./EJZSJ/二进制世界.html">
+                                <button class="button" style="vertical-align:middle"><span>二进制世界</span></button>
+                            </a>
+                            <a href="./SZMF/2.html">
+                                <button class="button" style="vertical-align:middle"><span>时钟魔方</span></button>
+                            </a>
+                            <div class="button12">
+                                <a href="./WDGZ/我的高中.html">
+                                    <button class="button1" style="vertical-align:middle"><span>我的高中</span></button>
+                                </a>
+                                <a href="./XIN/x.html"><!--♥爱心-->
+                                    <button class="button1" style="vertical-align:middle"><span>心</span></button>
+                                </a>
+                                <a href="./JXTP/精选图片.html">
+                                    <button class="button1" style="vertical-align:middle"><span>精选图片</span></button>
+                                </a>
+                            </div>
+                    </div>
+                </div>
+                    <div class="XIN"><!--关于我-->
+                        <div class="WA"><!--文案-->
+                            <h1>
+                                <p>假 如 遇 上 烦 ⼼ 事 ，就 盖 好 被 ⼦ 呼 呼 ⼤ 睡。不 管 怎 么 说,这 都 是 最 好 的 对 策——《村上春树》</p><br/><br/>
+                                <p>若 能 避 开 猛 烈 的 狂 喜 ，自 然 也 不 会 有 悲 痛 的 来 袭 —— 《人间失格》</p><br/><br/>
+                                <p>这 是 黄 昏 的 太 阳 ，我 们 却 把 它 当 成 了 黎 明 的 曙 光 —— 《巴黎圣母院》</p><br/><br/>
+                                <p>爱 你 的 ⼈ 不 会 因 为 你 的 冷 落 ⽽ 离 开，要 ⾛ 的 ⼈ 不 会 因 为 你 的 挽 留 ⽽ 停 步。</p>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="button123">
+                        <a href="./GYW/关于我.html">
+                            <button class="button3" style="vertical-align:middle"><span>关于我</span></button>
+                        </a>
+                    </div>
+                        <ul id="skill">
+                            <li><span class="bar graphic-design"></span><h3>java</h3></li>
+                            <li><span class="bar html-css"></span><h3>Html // Css</h3></li>
+                            <li><span class="bar jquery"></span><h3>c</h3></li>
+                        </ul>
+                    </div>
+            </div>
+    </main>
+</body>
+</html>
